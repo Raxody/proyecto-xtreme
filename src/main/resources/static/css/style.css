@@ -1,0 +1,179 @@
+@charset "ISO-8859-1";
+
+
+
+
+body{
+	
+  background-image: url("/img/SportsB.png");
+  background-repeat: repeat;
+}
+
+body h1{
+	color: white;
+    height: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align:center;
+    letter-spacing: 1.58px;
+	
+}
+
+.btn-dark1:hover,
+.btn-dark:hover,
+.btn-darkRep:hover,
+.btn-darkVent:hover {
+  	  	background-color: #b90000;
+  	  	color:white;	  
+}
+
+.btn-dark,
+.btn-dark:active {
+    background-color: #FF3900;
+    width: 120px;
+    margin: 0 auto;    
+    height: 50px;
+    outline: none;
+    line-height: 16px;
+    text-align: center;    
+    color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    padding-right: 15px;
+    border: none;
+    cursor: pointer;    
+   
+}
+
+.btn-dark1,
+.btn-dark1:active {
+    background-color: #FF3900;
+    width: 120px;
+    margin: 0;    
+    height: 50px;
+    outline: none;
+    line-height: 16px;
+    text-align: center;    
+    color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    padding-right: 15px;
+    border: none;
+    cursor: pointer;    
+   
+}
+
+.btn-darkRep,
+.btn-darkRep:active {
+    background-color: #FF3900;
+    width: 120px;
+    margin: 0 auto;    
+    height: 50px;
+    outline: none;
+    line-height: 16px;
+    text-align: center;    
+    color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    padding-right: 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;    
+}
+
+
+.btn-darkVent,
+.btn-darkVent:active{
+	background-color: #FF3900;
+    width: 120px;
+    margin: 0 auto;    
+    height: 50px;
+    outline: none;
+    line-height: 16px;
+    text-align: center;    
+    color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    padding-right: 15px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+
+.form-control  {
+    width: 300px;
+    border: none;
+    background: #ffffff45;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+	
+}
+
+
+.form-controlClient::placeholder,
+.form-control::placeholder,
+.form-controlVent::placeholder,
+.form-controlCant::placeholder {
+    color: #FFFFFF95;
+}
+
+.form-controlVent{
+	 width: 300px;
+    border: none;
+    background: #ffffff45;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px 5px 0px 0px;	
+    
+}
+
+.form-controlCant{
+	width: 100px;
+    border: none;
+    background: #ffffff45;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px 5px 0px 0px; 	
+}
+
+.form-controlClient {
+	width: 425px;
+    border: none;
+    background: #ffffff45;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+
+.table {
+	
+    border: none;
+    background: #ffffff45;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 15px;
+    border-radius: 5px 5px 0px 0px;  
+    
+	
+}

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ventas</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+	crossorigin="anonymous">
+
+<link	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link th:href = "@{/css/style.css}" rel="stylesheet">
+
+<style>
+
+/* Modify brand and text color */
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+	color: red;
+}
+</style>
+
+
+
+</head>
+<body th:style="'background:url('+@{/img/SportsB.png}+');'">
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-dark bg-dark"
+					style="padding-bottom: 20px; padding-top: 20px;">
+
+					<div class="container-fluid">
+						<span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 10%;"><i
+							class="fas fa-table-tennis"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 15%;"><i
+							class="fas fa-volleyball-ball"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 20%;"><i
+							class="fas fa-dumbbell"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 25%;"><i
+							class="fas fa-swimmer"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 75%;"><i
+							class="fas fa-biking"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 80%;"><i
+							class="fas fa-futbol"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 85%;"><i
+							class="fas fa-basketball-ball"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 90%;"> <i
+							class="fas fa-running"> </i>
+						</span>
+
+
+					</div>
+				</nav>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<div class="container-fluid shadow-sm bg-body rounded" >
+		<div class="row justify-contenct-center align-items-center">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container">
+
+					<div class="col col-lg-2">
+						<span class="navbar-brand mb-0 h3" > <img
+							th:src="@{/img/Xtreme logo.svg}" alt="" width="185" height="55">
+						</span>
+						<button class="navbar-toggler" type="button"
+							data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+							aria-controls="navbarNavDropdown" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+					<div class="col-md-auto">
+
+						<div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+							<ul class="nav nav-tabs">
+							
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="index"><i class="fas fa-home"></i> Inicio</a>
+								</li>
+									
+								<li class="nav-item "><a class="nav-link" style="color: red;" href="usuarios"><i class="fas fa-user-circle"> </i> Usuarios</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="clientes"><i class="fas fa-address-card"> </i> Clientes</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="proveedores"><i class="fas fa-archive"> </i>Proveedores</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="productos"><i class="fas fa-barcode"></i> Productos</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link active " 
+									aria-current="page" style=color:red; href="ventas"><i class="fas fa-hand-holding-usd"></i> Ventas</a></li>	
+																
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="reportes"><i class="fas fa-file-alt"></i> Reportes</a>
+								</li>
+															
+							
+							</ul>			
+
+						</div>
+					</div>
+					<div class="col col-lg-2 ">
+						<div class="row justify-contenct-center align-items-center"></div>
+						<span class="nav-item" style="position: relative; left: 60%; color: red"><i
+							class="fas fa-user-circle"> </i></span> <span class="nav-item"
+							style="position: relative; left: 61%; color: red;"
+							th:text=${usuario2.nombreUsuario}>-<i
+							class="fas fa-user-circle"></i></span> <span class="nav-item "
+							style="position: relative; left: 79%; color: red"><a
+							class="link-dark" style=color:red; href="salir"><i class="fas fa-sign-out-alt"
+							data-toggle="tooltip" data-html="true" title="Cerrar Sesión">
+							</i></a> </span>
+						</div>		
+					</div>
+				</div>
+		</div>
+
+	<form action="#" method="POST">
+	<h1> REGISTRO DE VENTAS</h1>
+	
+		<div class="container">
+			<div class="row justify-content-center align-items-center">
+			
+			
+				<div class="col">
+
+					<input type="number" name="cedula" id="cedula"
+						class="form-controlVent" placeholder="Cédula del cliente"
+						th:value="${cedulaCliente}" th:name="cedulaCliente"
+						th:id="cedulaCliente">
+
+				</div>
+
+				<div class="col justify-content-center align-items-center">
+					<button type="submit" class="btn btn-dark" name="consultarCedula"
+						id="consultarCedula">Consultar</button>
+				</div>
+
+
+				<div class="col">
+					<input type="text" name="nombreCliente" id="nombreCliente"
+						class="form-controlClient" th:value="${nombreCliente}"
+						placeholder="Cliente" disabled readonly>
+				</div>
+
+				<div class="col">
+
+					<input type="number" name="codigoVenta" id="codigoVenta"
+						class="form-controlVent" th:value="${codigoVenta}"
+						placeholder="Consec." disabled readonly>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="container">
+			<div class="row justify-content-center align-items-center">
+
+				
+				<div class="col">
+					<input type="number" name="codigoproducto" id="codigoproducto"
+						class="form-controlVent" th:value="${codigoProducto}"
+						th:name="codigo_producto" th:id="codigo_producto"
+						placeholder="Código del producto">
+				</div>
+				<div class="col">
+					<button type="submit" class="btn btn-dark"
+						name="consultarProducto1" id="consultarProducto1">Consultar</button>
+				</div>
+				<div class="col">
+					<input type="text" name="nombre_producto" id="nombre_producto"
+						class="form-controlVent" th:value="${nombreProducto}"
+						placeholder="Nombre del producto" disabled readonly>
+				</div>
+
+				<div class="col">
+
+					<input type="number" name="cantidad_producto1"
+						id="cantidad_producto1" class="form-controlCant"
+						th:value="${cantidad_producto1}" placeholder="Cantidad" style="text-align:center;">
+				</div>
+				<div class="col">
+					<input type="text" name="valorTotal1" id="valorTotal1"
+						class="form-controlVent" th:value="${valorTotal1}"
+						th:name="valorTotal1" th:id="valorTotal1"
+						placeholder="Valor total" disabled readonly>
+				</div>
+
+			</div>
+		</div>
+
+
+
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-sm-7" ></div>
+				<div class="col-sm-2  mt-2 text-center" style="color:white;">
+					<label>Total Venta</label>
+				</div>
+				<div class="col-sm-2">
+					<input type="text" name="total_venta" id="total_venta"
+						class="form-controlVent" th:value="${total_venta}"
+						th:name="total_venta" th:id="total_venta" disabled readonly>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-sm-7"></div>
+				<div class="col-sm-2 mt-2 text-center" style="color:white;">
+					<label>Total IVA</label>
+				</div>
+				<div class="col-sm-2">
+					<input type="text" name="totalIva" id="totalIva"
+						class="form-controlVent" th:value="${totalIva}" th:name="totalIva"
+						th:id="totalIva" disabled readonly>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-sm-0"></div>
+				
+
+				<div class="col-6 col-sm-2">
+					<button type="button" class="btn btn-dark1" data-bs-toggle="modal"
+						data-bs-target="#borrar" name="borrar" id="btn">Cancelar
+						Compra</button>
+				</div>
+
+				<div class="col-6 col-sm-2">
+					<button type="submit" class="btn btn-dark1"
+						name="CancelarEspecifico" id="CancelarEspecifico">Cancelar
+						Especifico</button>
+				</div>
+
+				<div class="col-6 col-sm-2">
+
+					<button type="submit" class="btn btn-dark1" name="calcularVenta"
+						id="calcularVenta">Agregar</button>
+
+				</div>
+
+				<div class="col-6 col-sm-1">
+					<button type="submit" class="btn btn-dark1" name="confirmarVenta"
+						id="confirmarVenta">Confirmar</button>
+
+				</div>
+				<div class="col-sm-2 justify-content-md-center" style="color:white;text-align:center">
+					<label>Total con IVA</label>
+				</div>
+				<div class="col-sm-2  justify-content-start">
+					<input type="text" name="totalFinal" id="totalFinal"
+						class="form-controlVent	" th:value="${totalFinal}"
+						th:name="totalFinal" th:id="total_venta" disabled readonly>
+				</div>
+			</div>
+			<div
+				class="col-sm-12 alert alert-danger mt-3  fas fa-exclamation-triangle"
+				role="alert" th:text="${mensaje}" th:if="${mensaje}"></div>
+			<div class=" col-sm-12 alert alert-success far fa-check-circle"
+				role="alert" th:text="${mensajeExito}" th:if="${mensajeExito}"></div>
+
+		</div>
+
+
+		<br>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2">
+					<table class="table" th:if="${productosRegistrados}">
+						<thead>
+							<tr>
+								<th>Codigo producto</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="productoTabla: ${productosRegistrados}">
+								<td th:text="${productoTabla.codigo_producto}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="col-sm-2">
+					<table class="table" th:if="${productosRegistrados}">
+						<thead>
+							<tr>
+								<th>Producto</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="productoTabla: ${productosRegistrados}">
+								<td th:text="${productoTabla.nombre_producto}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="col-sm-2">
+					<table class="table" th:if="${productosRegistrados}">
+						<thead>
+							<tr>
+								<th>Cantidad</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="cant : ${cantidadproductosRegistrados}">
+								<td th:text="${cant}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="col-sm-2">
+					<table class="table" th:if="${productosRegistrados}">
+						<thead>
+							<tr>
+								<th>Precio compra</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="productoTabla: ${productosRegistrados}">
+								<td th:text="${productoTabla.precio_compra}"></td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+
+				<div class="col-sm-2">
+					<table class="table" th:if="${productosRegistrados}">
+						<thead>
+							<tr>
+								<th>Iva</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="productoTabla: ${ivaRegistrados}">
+								<td th:text="${productoTabla}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="col-sm-2">
+					<table class="table" th:if="${productosRegistrados}">
+						<thead>
+							<tr>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="productoTabla: ${totalRegistrados}">
+								<td th:text="${productoTabla}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+		<div class="modal fade" id="borrar" data-bs-backdrop="static"
+			data-bs-keyboard="false" tabindex="-1"
+			aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel">¿Seguro
+							desea borrar el cliente?</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+
+
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-secondary" name="noBorrar">No</button>
+						<button type="submit" class="btn btn-primary" name="siBorrar">Si</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</form>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+		crossorigin="anonymous">
+		
+	</script>
+
+	<script src="https://kit.fontawesome.com/ace25f8021.js"
+		crossorigin="anonymous"></script>
+</html>
+

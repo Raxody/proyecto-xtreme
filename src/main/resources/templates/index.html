@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inicio</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+	crossorigin="anonymous">
+
+<link	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<style>
+
+/* Modify brand and text color */
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+	color: red;
+}
+
+body{
+	
+  background-image: url("/img/SportsB.png");
+  background-repeat: repeat;
+}
+</style>
+
+
+
+</head>
+<body th:style="'background:url('+@{/img/SportsB.png}+');'">
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-dark bg-dark"
+					style="padding-bottom: 20px; padding-top: 20px;">
+
+					<div class="container-fluid">
+						<span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 10%;"><i
+							class="fas fa-table-tennis"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 15%;"><i
+							class="fas fa-volleyball-ball"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 20%;"><i
+							class="fas fa-dumbbell"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 25%;"><i
+							class="fas fa-swimmer"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 75%;"><i
+							class="fas fa-biking"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 80%;"><i
+							class="fas fa-futbol"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 85%;"><i
+							class="fas fa-basketball-ball"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 90%;"> <i
+							class="fas fa-running"> </i>
+						</span>
+
+
+					</div>
+				</nav>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<div class="container-fluid shadow-sm bg-body rounded">
+		<div class="row justify-contenct-center align-items-center">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+				<div class="container">
+
+					<div class="col col-lg-2">
+						<span class="navbar-brand mb-0 h3" > <img
+							th:src="@{/img/Xtreme logo.svg}" alt="" width="185" height="55">
+						</span>
+						<button class="navbar-toggler" type="button"
+							data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+							aria-controls="navbarNavDropdown" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+					<div class="col-md-auto">
+
+						<div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+							<ul class="nav nav-tabs">
+							
+								<li class="nav-item"><a class="nav-link active " 
+									aria-current="page" style=color:red; href="#"><i class="fas fa-home"></i> Inicio</a></li>
+									
+								<li class="nav-item "><a class="nav-link" style="color: red;" href="usuarios"><i class="fas fa-user-circle"> </i> Usuarios</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="clientes"><i class="fas fa-address-card"> </i> Clientes</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="proveedores"><i class="fas fa-archive"> </i>Proveedores</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="productos"><i class="fas fa-barcode"></i> Productos</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="ventas"><i class="fas fa-hand-holding-usd"></i> Ventas</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="reportes"><i class="fas fa-file-alt"></i> Reportes</a>
+								</li>
+															
+							
+							</ul>			
+
+						</div>
+					</div>
+					<div class="col col-lg-2 ">
+						<div class="row justify-contenct-center align-items-center"></div>
+						<span class="nav-item" style="position: relative; left: 60%; color: red"><i
+							class="fas fa-user-circle"> </i></span> <span class="nav-item"
+							style="position: relative; left: 61%; color: red;"
+							th:text=${usuario2.nombreUsuario}>-<i
+							class="fas fa-user-circle"></i></span> <span class="nav-item "
+							style="position: relative; left: 79%; color: red"><a
+							class="link-dark" style=color:red; href="salir"><i class="fas fa-sign-out-alt"
+							data-toggle="tooltip" data-html="true" title="Cerrar Sesión">
+							</i></a> </span>
+						</div>		
+					</div>
+				</div>
+		</div>
+	
+    <!----------------------------------------------------------------------------------->
+    <!-- SLIDER -->
+    <!----------------------------------------------------------------------------------->
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2500">
+                <img th:src="@{/img/slider1.jpg}" class="d-block w-100" alt="boots">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Xtreme Boots</h5>
+
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2500">
+                <img th:src="@{/img/slider2.jpg}" class="d-block w-100" alt="ropes">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Xtreme Ropes</h5>
+
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2500">
+                <img th:src="@{/img/slider3.jpg}" class="d-block w-100" alt="bags">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Xtreme Bags</h5>
+
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+
+
+    </div>
+    
+    <section>
+        <div class="banner"  id="banner">
+            <img th:src="@{img/banner.PNG}" alt="banner" width="1920" height="68">
+        </div>    
+    </section>
+    
+
+    
+	
+    <!----------------------------------------------------------------------------------->
+    <!-- INTRO -->
+    <!----------------------------------------------------------------------------------->
+
+    <section class="w-50 mx-auto text-center pt-5" id="intro">
+        <h2 class="p-5 fs-2 border-top border-3" style="color:white">En Xtreme encontrarás todo lo que necesitas para tus aventuras por todo el mundo, sin importar que tipo de actividad realices.
+        </h2>
+
+
+    </section>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+	
+
+</body>
+
+<script src="https://kit.fontawesome.com/ace25f8021.js"
+	crossorigin="anonymous"></script>
+</html>

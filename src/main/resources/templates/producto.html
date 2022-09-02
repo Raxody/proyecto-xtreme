@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Productos</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+	crossorigin="anonymous">
+
+<link	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link th:href = "@{/css/style.css}" rel="stylesheet">
+
+<style>
+
+/* Modify brand and text color */
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+	color: red;
+}
+</style>
+
+
+
+</head>
+<body th:style="'background:url('+@{/img/SportsB.png}+');'">
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-dark bg-dark"
+					style="padding-bottom: 20px; padding-top: 20px;">
+
+					<div class="container-fluid">
+						<span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 10%;"><i
+							class="fas fa-table-tennis"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 15%;"><i
+							class="fas fa-volleyball-ball"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 20%;"><i
+							class="fas fa-dumbbell"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 25%;"><i
+							class="fas fa-swimmer"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 75%;"><i
+							class="fas fa-biking"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 80%;"><i
+							class="fas fa-futbol"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 85%;"><i
+							class="fas fa-basketball-ball"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 90%;"> <i
+							class="fas fa-running"> </i>
+						</span>
+
+
+					</div>
+				</nav>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<div class="container-fluid shadow-sm bg-body rounded" >
+		<div class="row justify-contenct-center align-items-center">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container">
+
+					<div class="col col-lg-2">
+						<span class="navbar-brand mb-0 h3" > <img
+							th:src="@{/img/Xtreme logo.svg}" alt="" width="185" height="55">
+						</span>
+						<button class="navbar-toggler" type="button"
+							data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+							aria-controls="navbarNavDropdown" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+					<div class="col-md-auto">
+
+						<div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+							<ul class="nav nav-tabs">
+							
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="index"><i class="fas fa-home"></i> Inicio</a></li>
+									
+								<li class="nav-item "><a class="nav-link" style="color: red;" href="usuarios"><i class="fas fa-user-circle"> </i> Usuarios</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="clientes"><i class="fas fa-address-card"> </i> Clientes</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="proveedores"><i class="fas fa-archive"> </i>Proveedores</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link active " 
+									aria-current="page" style=color:red; href="productos"><i class="fas fa-barcode"></i> Productos</a></li>
+																								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="ventas"><i class="fas fa-hand-holding-usd"></i> Ventas</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="reportes"><i class="fas fa-file-alt"></i> Reportes</a>
+								</li>
+															
+							
+							</ul>			
+
+						</div>
+					</div>
+					<div class="col col-lg-2 ">
+						<div class="row justify-contenct-center align-items-center"></div>
+						<span class="nav-item" style="position: relative; left: 60%; color: red"><i
+							class="fas fa-user-circle"> </i></span> <span class="nav-item"
+							style="position: relative; left: 61%; color: red;"
+							th:text=${usuario2.nombreUsuario}>-<i
+							class="fas fa-user-circle"></i></span> <span class="nav-item "
+							style="position: relative; left: 79%; color: red"><a
+							class="link-dark" style=color:red; href="salir"><i class="fas fa-sign-out-alt"
+							data-toggle="tooltip" data-html="true" title="Cerrar Sesión">
+							</i></a> </span>
+						</div>		
+					</div>
+				</div>
+		</div>
+	<form th:action="@{/cargarArchivo}" enctype="multipart/form-data" method="post">
+		<div class="container mt-3">
+		<h1> PRODUCTOS </h1>
+
+			<div class="row align-center" 
+				style="margin-top: 50px;						  
+						  ">
+
+
+				<div class="col-sm-2"></div>
+				<div class="col-sm-1 row justify-content-md-center " style="color:white;text-align:center;">
+					<label class="fs-6" for="cedula">Sube el CSV</label> 
+					
+				</div>
+
+
+				<div class="col-sm-4">
+					<input style="width: 300px;
+				    border: none;
+				    background: #ffffff45;
+				    border-bottom: 1px solid #FFFFFF;
+				    outline: none;
+				    height: 50px;
+				    color: #FFFFFF;
+				    font-size: 15px;				    
+				    border-radius: 5px 5px 0px 0px;
+				    width: 80%;" type="text" id="info" disabled readonly />
+
+				</div>
+				<div class="col-sm-2 " style="display: flex;justify-content: center;">
+					<input type="button" class="btn btn-dark" id="file-upload"
+						value="Examinar"
+						onclick="document.getElementById('archivo').click();" /> 
+						
+						
+						
+					<input type="file" id="archivo" onchange='cambiar()'
+						style="visibility: hidden;" name="archivo" />
+						
+						
+				</div> 
+
+	<div class="col-sm-2 text-right">
+					<button type="submit" class=" btn btn-dark " name="cargar" id="btn">Cargar</button>
+					</div>
+<div class=" col-sm-12 alert alert-danger mt-3 fas fa-exclamation-triangle text-center" role="alert"
+					th:text="${mensaje}" th:if="${mensaje}" ></div>
+					
+				<div class=" col-sm-12 text-center alert alert-success mt-3 far fa-check-circle " role="alert" th:if="${mensaje1}" th:text="${mensaje1}" >
+					
+					
+					
+
+			</div>
+		
+</div>
+		<div class="container mt-3 ">
+			<div class="row ">
+
+				
+				
+					
+					</div>
+					
+					
+			</div>
+		</div>
+	
+
+	</form>
+
+
+</body>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js">
+	
+</script>
+<script type="text/javascript">
+	function cambiar() {
+		var archivoNombre = document.getElementById('archivo').files[0].name;
+		document.getElementById('info').value = archivoNombre;
+
+	}
+</script>
+
+<script src="https://kit.fontawesome.com/ace25f8021.js" crossorigin="anonymous"></script>
+
+</html>

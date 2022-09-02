@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inicio</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+	crossorigin="anonymous">
+
+<link	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link th:href = "@{/css/style.css}" rel="stylesheet">
+
+<style>
+
+/* Modify brand and text color */
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+	color: red;
+}
+</style>
+
+
+
+</head>
+<body th:style="'background:url('+@{/img/SportsB.png}+');'">
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-dark bg-dark"
+					style="padding-bottom: 20px; padding-top: 20px;">
+
+					<div class="container-fluid">
+						<span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 10%;"><i
+							class="fas fa-table-tennis"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 15%;"><i
+							class="fas fa-volleyball-ball"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 20%;"><i
+							class="fas fa-dumbbell"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 25%;"><i
+							class="fas fa-swimmer"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 75%;"><i
+							class="fas fa-biking"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 80%;"><i
+							class="fas fa-futbol"></i> </span> <span class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 85%;"><i
+							class="fas fa-basketball-ball"></i></span> <span
+							class="navbar-brand mb-0 h3"
+							style="position: absolute; left: 90%;"> <i
+							class="fas fa-running"> </i>
+						</span>
+
+
+					</div>
+				</nav>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<div class="container-fluid shadow-sm bg-body rounded" >
+		<div class="row justify-contenct-center align-items-center">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container">
+
+					<div class="col col-lg-2">
+						<span class="navbar-brand mb-0 h3" > <img
+							th:src="@{/img/Xtreme logo.svg}" alt="" width="185" height="55">
+						</span>
+						<button class="navbar-toggler" type="button"
+							data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+							aria-controls="navbarNavDropdown" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+					<div class="col-md-auto">
+
+						<div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+							<ul class="nav nav-tabs">
+							
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="index"><i class="fas fa-home"></i> Inicio</a>
+								</li>
+								
+								<li class="nav-item "><a class="nav-link" style="color: red;" href="usuarios"><i class="fas fa-user-circle"> </i> Usuarios</a>
+								</li>
+							
+								<li class="nav-item"><a class="nav-link active " 
+									aria-current="page" style=color:red; href="clientes"><i class="fas fa-address-card"> </i> Clientes</a></li>
+																									
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="proveedores"><i class="fas fa-archive"> </i>Proveedores</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="productos"><i class="fas fa-barcode"></i> Productos</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="ventas"><i class="fas fa-hand-holding-usd"></i> Ventas</a>
+								</li>
+								
+								<li class="nav-item"><a class="nav-link" style="color: red;" href="reportes"><i class="fas fa-file-alt"></i> Reportes</a>
+								</li>
+															
+							
+							</ul>			
+
+						</div>
+					</div>
+					<div class="col col-lg-2 ">
+						<div class="row justify-contenct-center align-items-center"></div>
+						<span class="nav-item" style="position: relative; left: 60%; color: red"><i
+							class="fas fa-user-circle"> </i></span> <span class="nav-item"
+							style="position: relative; left: 61%; color: red;"
+							th:text=${usuario2.nombreUsuario}>-<i
+							class="fas fa-user-circle"></i></span> 
+							
+							<span class="nav-item "
+							style="position: relative; left: 79%; color: red"><a
+							class="link-dark" style=color:red; href="salir"><i class="fas fa-sign-out-alt" 
+							data-toggle="tooltip" data-html="true" title="Cerrar Sesión"> 
+							</i></a> </span>
+						</div>		
+					</div>
+				</div>
+		</div>
+		
+<form action="#" th:action="@{/clientes}" th:object="${cliente}" 
+		method="post">
+		<div class="container mt-4"> 
+			<h1> DATOS DE CLIENTE</h1>
+
+			<div class="row">
+
+				<div class="col-sm-2">
+					<label for="cedula"></label>
+				</div>
+
+				<div class="col-sm-4">
+
+					<input type="number" name="cedula" id="cedula" value =""  class="form-control" 			
+						placeholder="Cédula" tabindex="4"th:value="${cedulaCliente}" th:name="cedulaCliente" th:id="cedulaCliente">
+
+				</div>
+
+
+				<div class="col-sm-1">
+					<label for="usuario"></label>
+				</div>
+			
+				
+			<div class="col-sm-4">
+					<input type="text" name="direccion" id="usuario" value ="" class="form-control"
+						th:value="${direccionCliente}" th:name="direccionCliente" th:id="direccionCliente" placeholder="Dirección" tabindex="4">
+				</div>
+			</div>
+
+
+			<div class="row mt-3">
+
+				<div class="col-sm-2">
+					<label for="nombre"></label>
+				</div>
+				<div class="col-sm-4">
+					<input type="email" name="email" id= "email" value ="" class="form-control"
+						th:value="${emailCliente}" th:name="emailCliente" th:id="emailCliente"  placeholder="E-mail" tabindex="4">
+				</div>
+
+				<div class="col-sm-1">
+					<label for="contrasenia"></label>
+				</div>
+
+				<div class="col-sm-4">
+				
+				<input type="text" name="nombre" id="nombre"
+						class="form-control" th:value="${nombreCliente}" th:name="nombreCliente" th:id="nombreCliente"
+						 placeholder="Nombres"
+						tabindex="4">
+				
+					
+				</div>
+
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-sm-2">
+					<label for="correo"></label>
+				</div>
+
+				<div class="col-sm-4">
+					<input type="text" name="correo" value="" id="correo" class="form-control"
+					th:value="${telefonoCliente}" th:name="telefonoCliente" th:id="telefonoCliente"
+						placeholder="Teléfono" tabindex="4" >
+				</div>
+		
+
+			</div>
+		</div>
+
+		<div class="container" >
+			
+
+			<div class="row mt-5">
+
+				<div class="col-sm-1">					
+				</div>
+				<div class="col-sm-2">
+
+					<button type="submit" class="btn btn-dark" name="consultar" id="consultar">Consultar</button>				
+				</div>
+				<div class="col-sm-2">
+					<button type="submit" class="btn btn-dark" name="crear" id="btn">Crear</button>
+				</div>
+
+				<div class="col-sm-2">
+					<button type="submit" class="btn btn-dark" name="actualizar"id="btn">Actualizar</button>
+				</div>
+				<div class="col-sm-2">
+					<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#borrar"
+					 name="borrar" id="btn">Borrar</button>
+				</div>		
+				
+				<div class="col-sm-2">
+					<button type="submit" class="btn btn-dark" name="Limpiar" id="btn">Limpiar</button>
+				</div>	
+				</div>	
+				
+			
+			
+<div class=" col-sm-12  alert alert-danger mt-3 fas fa-exclamation-triangle" role="alert" th:text="${mensaje}" th:if="${mensaje}"></div>
+<div class=" col-sm-12 alert alert-danger mt-3 fas fa-exclamation-triangle" role="alert" th:text="${mensajeBorrar}" th:if="${mensajeBorrar}"></div>
+<div class="col-sm-12 alert alert-success mt-3 far fa-check-circle" role="alert" th:text="${mensajeBorrar2}" th:if="${mensajeBorrar2}"></div>
+<div class="col-sm-12 alert alert-success mt-3 far fa-check-circle" role="alert" th:text="${mensajeActualizar}" th:if="${mensajeActualizar}"></div>
+<div class="col-sm-12 alert alert-danger mt-3 fas fa-exclamation-triangle" role="alert" th:text="${mensajeActualizar2}" th:if="${mensajeActualizar2}"></div>
+<div class="col-sm-12 alert alert-danger mt-3 fas fa-exclamation-triangle" role="alert" th:text="${mensajeActualizar3}" th:if="${mensajeActualizar3}"></div>
+<div class="col-sm-12 alert alert-success mt-3 far fa-check-circle" role="alert" th:text="${mensajeCrear}" th:if="${mensajeCrear}"></div>
+<div class="col-sm-12 alert alert-danger mt-3 fas fa-exclamation-triangle" role="alert" th:text="${mensajeCrear2}" th:if="${mensajeCrear2}"></div>
+<div class="col-sm-12 alert alert-danger mt-3 fas fa-exclamation-triangle" role="alert" th:text="${mensajeCrear3}" th:if="${mensajeCrear3}"></div>
+		</div>
+		<br>
+	
+		<div class="container">
+		<div class="row">
+			<div class="col-sm">
+
+				<table class="table table-striped"  th:if="${cedulaCliente2}">
+					<thead>
+					 <tr>
+      <th scope="col">Cedula Cliente</th>
+      <th scope="col">Nombre Cliente</th>
+       <th scope="col">Email Cliente</th>
+       <th scope="col">Direccion Cliente</th>
+      <th scope="col">Telefono Cliente</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="color:white;">
+ 
+      <td th:text = "${cedulaCliente}  "  ></td>
+        <td th:text = "${nombreCliente}"></td>
+        <td th:text = "${emailCliente}"></td>
+      <td th:text = "${direccionCliente}"></td>     
+        <td th:text = "${telefonoCliente}"></td>
+         
+    </tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		
+	</div>
+			<!-- Modal -->
+<div class="modal fade" id="borrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">¿Seguro desea borrar el cliente?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+  
+     
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-secondary" name="noBorrar">No</button>
+        <button type="submit" class="btn btn-primary" name="siBorrar">Si</button>
+      </div>
+    </div>
+  </div>
+</div>
+		
+	</form>
+	
+</body>
+
+<script 
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+</script>
+
+<script src="https://kit.fontawesome.com/ace25f8021.js" crossorigin="anonymous"></script>
+
+
+
+</html>

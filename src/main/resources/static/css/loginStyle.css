@@ -1,0 +1,160 @@
+@charset "ISO-8859-1";
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Fondo: */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(/img/Imagen.png) no-repeat center top 0rem;
+    background-size: cover;
+    font-family: Roboto;
+    height: 100vh;
+    /* Colors: */
+      color:white;
+    --blanco85: #FFFFFF85;
+    --negro: #000000;
+    --blanco70: #FFFFFF70;
+    --blanco35: #FFFFFF35;
+    --blanco100: #FFFFFF;
+    --naranja: #FF3900;
+    /* Font/text values */
+    --unnamed-font-style-normal: normal;
+    --unnamed-font-weight-normal: normal;
+    --unnamed-font-weight-medium: medium;
+    --unnamed-font-size-16: 16px;
+    --unnamed-font-size-20: 20px;
+    --unnamed-character-spacing-0-15: 0.15px;
+    --unnamed-character-spacing-1-78: 1.78px;
+    --unnamed-line-spacing-16: 16px;
+    --unnamed-line-spacing-24: 24px;
+}
+
+/* --------------------- */
+
+
+/* "Header" */
+
+
+/* --------------------- */
+
+.page-head {
+    background: #ffffffb0;
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-box {
+    width: 385px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 100px 0 0 0px;
+    margin: 50px 0 0 0px;
+    color: var(--blanco100);
+}
+
+.login-box h1 {
+    height: 24px;
+    margin-bottom: 30px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-roboto);
+    letter-spacing: 1.58px;
+}
+
+.login-box input {
+    width: 400px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 385px;
+    border: none;
+    background: #ffffff25;
+    border-bottom: 1px solid #FFFFFF;
+    outline: none;
+    height: 50px;
+    color: #FFFFFF;
+    font-size: 15px;
+    padding-left: 15px;
+    margin-bottom: 40px;
+}
+
+.login-box input::placeholder {
+    color: #FFFFFF95;
+}
+
+.login-box input[type="submit"] {
+    background: #FF3900;
+    width: 385px;
+    outline: none;
+    height: 50px;
+    color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    padding-right: 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    position: relative;
+    padding: 0px 15px 0px 51px;
+    font-size: 15px;
+    font-style: bold;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-bottom: 40px;
+}
+
+.formulario .checkbox label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 0px;
+    bottom: -40px;
+    background: none;
+    border: 3px solid #ffffff;
+    margin-bottom: 40px;
+}
+
+.formulario .checkbox label:before {
+    border-radius: 3px;
+}
+
+.formulario .checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.formulario .checkbox input[type="checkbox"]:checked+label:before {
+    display: none;
+}
+
+.formulario .checkbox input[type="checkbox"]:checked+label {
+    background: #FF4136;
+    color: #fff;
+    padding: 5px 15px;
+}
